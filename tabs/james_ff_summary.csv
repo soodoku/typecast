@@ -1,0 +1,13 @@
+treat,cf_mean,cf_min,cf_max,party
+Black (vs. white),14,9.4,18.5,Democratic conjunction fallacy
+Black (vs. white),-9.7,-12.9,-6.5,Republican conjunction fallacy
+Gay (vs. straight),19.1,14.5,23.6,Democratic conjunction fallacy
+Gay (vs. straight),-13.2,-16.4,-9.9,Republican conjunction fallacy
+Evangelical (vs. no cue),-5.9,-11.3,-0.4,Democratic conjunction fallacy
+Evangelical (vs. no cue),4.2,0.2,8.1,Republican conjunction fallacy
+Secular (vs. no cue),6.6,0.9,12.2,Democratic conjunction fallacy
+Secular (vs. no cue),-4.5,-8.2,-0.7,Republican conjunction fallacy
+Liberal (vs. no cue),9.4,3.8,15,Democratic conjunction fallacy
+Liberal (vs. no cue),-6.4,-10,-2.7,Republican conjunction fallacy
+Conservative (vs. no cue),-8.3,-13.8,-2.7,Democratic conjunction fallacy
+Conservative (vs. no cue),5.9,1.8,10,Republican conjunction fallacy

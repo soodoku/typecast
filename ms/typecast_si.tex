@@ -1,0 +1,331 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[titletoc,title]{appendix}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\definecolor{dark-red}{rgb}{0.75,0.10,0.10} 
+\usepackage[margin=1in]{geometry}
+\usepackage[linkcolor=dark-red,
+            colorlinks=true,
+            urlcolor=blue,
+            pdfstartview={XYZ null null 1.00},
+            pdfpagemode=UseNone,
+            citecolor={dark-red},
+            pdftitle={Typecast: A Routine Mental Shortcut Causes Party Stereotyping}]{hyperref}
+
+\usepackage[resetlabels,labeled]{multibib}
+\newcites{SI}{SI References}
+\usepackage{natbib}
+\usepackage[section]{placeins}
+\usepackage{float}
+
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\geometry{letterpaper}               % This is 8.5x11 paper. Options are a4paper or a5paper or other... 
+\usepackage{graphicx}                % Handles inclusion of major graphics formats and allows use of 
+\usepackage{amsfonts,amssymb,amsbsy}
+\usepackage{amsxtra}
+\usepackage{verbatim}
+\setcitestyle{round,semicolon,aysep={},yysep={;}}
+\usepackage{setspace}             % Permits line spacing control. Options are \doublespacing, \onehalfspace
+\usepackage{sectsty}             % Permits control of section header styles
+\usepackage{lscape}
+\usepackage{fancyhdr}             % Permits header customization. See header section below.
+\usepackage{url}                     % Correctly formats URLs with the \url{} tag
+\usepackage{fullpage}        %1-inch margins
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{comment}
+\setlength{\parindent}{3em}
+
+\usepackage[T1]{fontenc}
+%\usepackage{bm}
+\usepackage{libertine}
+
+\usepackage{chngcntr}
+
+%This section double-spaces & makes footnotes the same size as normal text.
+%\usepackage{footmisc}
+%\setlength{\footnotesep}{\baselineskip}
+%\makeatother
+%\renewcommand{\footnotelayout}{\normalsize \doublespacing}
+
+% Alternative citation styles
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+
+
+% Caption
+\usepackage[hang, font=small,skip=0pt, labelfont={bf}]{caption}
+%\captionsetup[subtable]{font=small,skip=0pt}
+\usepackage{subcaption}
+
+% tt font issues
+% \renewcommand*{\ttdefault}{qcr}
+\renewcommand{\ttdefault}{pcr}
+
+\setcounter{page}{0}
+
+\usepackage{lscape}
+\renewcommand{\textfraction}{0}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\floatpagefraction}{0.40}
+\setcounter{totalnumber}{5}
+\makeatletter
+\providecommand\phantomcaption{\caption@refstepcounter\@captype}
+\makeatother
+
+\title{Typecast: A Routine Mental Shortcut \\ Causes Party Stereotyping\footnote{We thank the American Politics \& Public Policy workshop at Yale University and the Political Behavior \& Identities workshop at Duke University for participants' helpful questions, thoughts, and suggestions. We also appreciate our fellow panelists at MPSA 2017 for their feedback. Stephen Goggin, Marcel Garz, Brad Gomez, Bob Jackson, Kabir Khanna, Matt Levendusky, Matt Pietryka, Carrie Roush, and Julie Wronski also offered helpful comments. We are grateful to them.}}
+
+\author{Douglas J. Ahler\thanks{Doug is Assistant Professor of Political Science at the Florida State University, \href{mailto:dahler@fsu.edu}{\texttt{dahler@fsu.edu}}.} \and Gaurav Sood\thanks{Gaurav can be reached at \href{mailto:gsood07@gmail.com}{\texttt{gsood07@gmail.com}}.}}
+
+
+\begin{document}
+\maketitle
+
+
+\begin{comment}
+
+setwd(paste0(githubdir, "typecast/ms/"))
+tools::texi2dvi("typecast_si.tex", pdf = TRUE, clean = TRUE)
+setwd(githubdir)
+
+\end{comment}
+
+\newpage
+\doublespacing
+
+\renewcommand{\thesection}{SI \arabic{section}}
+\renewcommand\thetable{\thesection.\arabic{table}}  
+\renewcommand\thefigure{\thesection.\arabic{figure}}
+\counterwithin{figure}{section}
+
+\section{Item Text and Survey Design}
+
+\subsection{Linda and James}
+
+\subsubsection{All vignettes from Experiment 1} \label{si:study1_vigs}
+\begin{figure}[h!]
+\centering
+\caption{To preclude suspicion, James and Linda were couched as part of a study ostensibly on people's perceptions of the returns to higher education. These are the ``Kara'' and ``Dave'' vignettes that respondents saw first.}\label{ep_figure}
+\vspace{5mm}
+\begin{subfigure}[t]{0.48\textwidth}
+	\includegraphics[width=1\textwidth]{../figs/vig_kara.png}
+	\caption{}
+\end{subfigure}
+\begin{subfigure}[t]{0.48\textwidth}
+	\includegraphics[width=1\textwidth]{../figs/vig_dave.png}
+	\caption{}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\caption{Vignettes for our modified Linda Problem and the maximal-contrast James experiment}\label{ep_figure_si}
+\vspace{5mm}
+\begin{subfigure}[t]{0.48\textwidth}
+	\includegraphics[width=1\textwidth]{../figs/vig_james.png}
+	\caption{}
+\end{subfigure}
+\begin{subfigure}[t]{0.48\textwidth}
+	\includegraphics[width=1\textwidth]{../figs/vig_linda.png}
+	\caption{}
+\end{subfigure}
+\end{figure}
+
+\clearpage
+
+\subsection{Bayesian Perceptions}
+
+\subsubsection{Recall battery for treatment impact}
+\begin{figure}[h!]
+\begin{center}
+\caption{Recall Treatment} \label{si_treat_fig}
+\includegraphics[scale=0.5]{../figs/correct_bonus.png}
+\end{center}
+\end{figure}
+
+\clearpage
+\subsubsection{Numeracy Battery}
+\label{oa:num_battery}
+
+The four items used for a numeracy battery are drawn from \citet{weller2012development}. They are:
+
+\begin{enumerate}
+\item ``Someone rolls a fair, six-sided die 1,000 times. On average, how many times would the die come up as an even number?'' (Open-ended text-entry response)
+
+\item ``There is a 1\% chance of winning a \$10 prize in the Megabucks Lottery. On average, how many people would win the \$10 prize if 1,000 people each bought a single ticket?'' (Open-ended text-entry response)
+
+\item ``Which of the following numbers represents a bigger risk of getting a disease?'' 
+    \begin{itemize}
+    \item 1 in 12
+    \item 1 in 37
+    \end{itemize}
+    
+\item ``In the PCH Sweepstakes, the chances of winning a car are 1 in 1,000. What percent of PCH Sweepstakes tickets win a car?'' (Open-ended text-entry response)
+\end{enumerate}
+
+\clearpage
+
+\section{Filtering protocol for the fully-factorial ``James'' experiment} \label{si:filtering}
+
+At the time we fielded the second ``James'' study, a panic had broken out among experimental social scientists regarding data quality on Mechanical Turk \citep[e.g.,][]{ahler2019turk_nyu, bai_2018, ryan_2018}. In particular, concerns about bot respondents, foreign respondents, and ``account farms'' (locations with multiple individuals taking the same survey, or one individual with multiple accounts) masquerading as genuine survey-takers. We implemented a filtering protocol consistent with \citep{ahler2019turk_nyu} to preclude these concerns. We recruited 1,991 respondents for our original sample. Using \citet{kyip}, we discovered 359 IP addresses flagged for being outside the United States or on a known Blacklist, and an additional 106 duplicated addresses and 9 missing addresses. We classified these as suspicious responses. 87 respondents were also flagged for responding to multiple low-incidence screener questions used to identify potential survey ``trolls'' \citep{lopezhillygus_2018}. In all---there was some overlap between the IP flags and the low-incidence screener flags---we found 484 respondents (24\% of the sample) to be potentially low-quality, leaving us with our final sample of $n =$ 1,507. 
+
+Although the suspicious respondents add noise to the data, they do not change our findings, either in terms of statistical or substantive significance. All of the treatments significantly affect perceptions of James---and the likelihood of committing the conjunction fallacy---as they do in the analysis limited to non-suspicious respondents. Furthermore, the cues about James's race and sexuality continue to be the strongest treatments.
+
+\clearpage
+
+\section{Model results: Fully-factorial ``James'' experiment} \label{si:james_ff_model}
+
+As described in the paper, for the fully-factorial ``James'' experiment our model takes the following form, with $i$ indexing respondents and $j$ indexing possible values of the dependent variable:
+
+\begin{equation}
+p_{ij} = p(y_{i} = j) =
+    \begin{cases}
+p(y_{i} = -1) = p(y_{i}^{*} \leq \alpha_{-1}) \\
+p(y_{i} = 0) = p(\alpha_{-1} < y_{i}^{*} \leq \alpha_{0}) \\
+p(y_{i} = 1) = p(\alpha_{0} < y_{i}^{*})
+    \end{cases}
+\end{equation}
+
+\noindent where $y^{*}_{i}$ is the respondent's latent outcome and $\alpha_{-1}$ and $\alpha_{0}$ are the model's cutpoints. We model these probabilities as follows:
+
+\begin{equation}
+p(y_{i} = j) \sim \text{logit}^{-1}(\beta_{k}X_{ik} + \varepsilon_{i})
+\end{equation}
+
+\noindent where $X_{k}$ denotes our treatment vector---James's race, sexual orientation, religion, and policy views. Importantly, because these these treatments were assigned randomly and independently of each other, $\beta_{k}$ captures the unique effect of attribute $k$, on average and independent of all other treatments in $K$.
+
+The results of the model are presented in Table \ref{tab:logit_james}. The coefficients, converted to changes in predicted probability of making the Democratic and Republican conjunction fallacies (depicted in Figure 3, are subsequently presented in Table \ref{tab:logit_james_pp}.
+
+\begin{table}
+\caption{Full model results for the fully-factorial ``James'' experiment}
+\label{tab:logit_james}
+\begin{center}
+\begin{tabular}{l|c|}
+\cline{2-2}
+& DV: Democratic (+1) or \\
+& Republican (-1) conjunction fallacy\\
+\hline
+\multicolumn{1}{|l|}{Black (vs. white)} & -.61\\
+\multicolumn{1}{|l|}{} & (.10) \\
+\multicolumn{1}{|l|}{Gay (vs. straight)}   & -.82\\
+\multicolumn{1}{|l|}{} & (.10) \\
+\multicolumn{1}{|l|}{Evangelical (vs. nothing)}     & .26\\
+\multicolumn{1}{|l|}{} & (.12) \\
+\multicolumn{1}{|l|}{Secular (vs. nothing)}         & -.29\\
+\multicolumn{1}{|l|}{} & (.13) \\
+\multicolumn{1}{|l|}{Liberal (vs. nothing)}         & -.41\\
+\multicolumn{1}{|l|}{} & (.13) \\
+\multicolumn{1}{|l|}{Conservative (vs. nothing)}    & .36\\
+\multicolumn{1}{|l|}{} & (.12) \\
+\hline
+\multicolumn{1}{|l|}{Cutpoint$_{1}$}    & -.58\\
+\multicolumn{1}{|l|}{Cutpoint$_{2}$}    & .64\\
+\multicolumn{1}{|l|}{Pseudo $R^{2}$}    & .05\\
+\multicolumn{1}{|l|}{$n$}    & 1507\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}
+\caption{Model coefficients converted to changes in predicted probabilities in the fully-factorial ``James'' experiment}
+\label{tab:logit_james_pp}
+\begin{center}
+\begin{tabular}{l|cc|}
+\cline{2-3}
+ & \multicolumn{2}{|c|}{Respondents $(n = 1507)$ are...} \\
+\hline
+\multicolumn{1}{|l|}{When James is described as...} & \begin{tabular}[c]{@{}c@{}}more likely\\ to make\\ Dem. CF by\end{tabular} & \begin{tabular}[c]{@{}c@{}}more likely\\ to make\\ Rep. CF by\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Black (vs. white)}             & \textbf{\emph{14.0\%}}                                                            & \textbf{\emph{-9.7\%}}                                                             \\
+\multicolumn{1}{|l|}{} & [9.4, 18.5] & [-12.9, -6.5] \\ 
+\multicolumn{1}{|l|}{Gay (vs. straight)}            & \textbf{\emph{19.1\%}}                                                            & \textbf{\emph{-13.2\%}}                                                     \\
+\multicolumn{1}{|l|}{} & [14.5, 23.6] & [-16.4, -9.9] \\ 
+\multicolumn{1}{|l|}{Evangelical (vs. nothing)}     & \emph{-5.8\%}                                                            & \emph{4.2\%}                                                                       \\
+\multicolumn{1}{|l|}{} & [-11.3, -0.4] & [0.2, 8.1] \\ 
+\multicolumn{1}{|l|}{Secular (vs. nothing)}         & \emph{6.6\%}                                                             & \emph{-4.5\%}                      \\
+\multicolumn{1}{|l|}{} & [0.9., 12.2] & [-8.2, -0.7] \\ 
+\multicolumn{1}{|l|}{Liberal (vs. nothing)}         & \textbf{\emph{9.4\%}}                                                            & \textbf{\emph{-6.4\%}}                                                                                \\
+\multicolumn{1}{|l|}{} & [3.8, 15.0] & [-10.0, -2.7] \\ 
+\multicolumn{1}{|l|}{Conservative (vs. nothing)}    & \textbf{\emph{-8.3\%}}                                                            & \textbf{\emph{5.9\%}}                                                                   \\
+\multicolumn{1}{|l|}{} & [-13.8, -2.7] & [1.8, 10.0] \\ 
+\hline
+\end{tabular}
+\end{center}
+\scriptsize{NOTE: 95\% confidence intervals in brackets below estimates. Estimates in \textbf{italics} differ significantly from zero at $p<.05$. Estimates in \textbf{\emph{bolded italics}} differ significantly from zero at $p<.01$.}
+\end{table}
+
+\clearpage
+\subsection{Marginals for the James experiment: How often do respondents make the conjunction fallacy?} \label{si:marginals}
+
+An alternative way to present these results is simply to show how often respondents commit the conjunction fallacies when presented with party-representative traits of James. This is shown in the table below, which also implies why changes in predicted probabilities are a better way to assess the effects of this information. For reasons not entirely clear, respondents were far more likely to commit the Democratic conjunction fallacy---that is, to say that James is X and a Democrat---than to commit the equivalent Republican conjunction fallacy, sometimes even for counter-representative groups. (For example, when James is given a conservative cue, respondents are still more likely to commit the Democratic conjunction fallacy. However, the rate at which people commit the Republican conjunction fallacy goes up when James is described as conservative, and is in between these two quantities when James lacks an ideological cue.) We suspect that the Democratic conjunction fallacy is more popular for several reasons but, first and foremost, that James is described as college educated at a time when a serious degree divide has opened up between the two parties. Additionally, if anything, respondents appear ever so slightly more likely to attribute their own partisanship to James, all else equal.
+
+One interesting thing that stands out is Democrats' and Republicans' tendencies to commit the conjunction fallacy at higher rates than independents, even while the rates they commit these errors are quite similar to each other---even when assessing the other party. This is relatively consistent with the results in Ahler \& Sood (2018): everyone stereotypes, but partisans are more prone to do so than independents.
+
+\begin{table}[]
+\caption{Marginal rates at which conjunction fallacies (CFs) are committed, given particular traits of ``James''}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Group--CF dyad         & Full sample & Democrats & Independents & Republicans \\ \hline
+Black--Dem. CF         & 0.60        & 0.66      & 0.49         & 0.54        \\ \hline
+Black--Rep. CF         & 0.15        & 0.13      & 0.10         & 0.21        \\ \hline
+White--Dem. CF         & 0.49        & 0.50      & 0.38         & 0.49        \\ \hline
+White--Rep. CF         & 0.28        & 0.28      & 0.20         & 0.29        \\ \hline
+Gay--Dem. CF           & 0.63        & 0.68      & 0.48         & 0.60        \\ \hline
+Gay--Rep. CF           & 0.14        & 0.12      & 0.08         & 0.19        \\ \hline
+Straight--Dem. CF      & 0.46        & 0.49      & 0.38         & 0.44        \\ \hline
+Straight--Rep. CF      & 0.29        & 0.29      & 0.25         & 0.31        \\ \hline
+Evangelical--Dem. CF   & 0.49        & 0.52      & 0.38         & 0.48        \\ \hline
+Evangelical--Rep. CF   & 0.27        & 0.25      & 0.25         & 0.29        \\ \hline
+Secular--Dem. CF       & 0.61        & 0.67      & 0.48         & 0.55        \\ \hline
+Secular--Rep. CF       & 0.16        & 0.16      & 0.12         & 0.18        \\ \hline
+No relig. cue--Dem. CF & 0.54        & 0.56      & 0.45         & 0.52        \\ \hline
+No relig. cue--Rep. CF & 0.21        & 0.20      & 0.08         & 0.27        \\ \hline
+Liberal cue--Dem. CF   & 0.62        & 0.69      & 0.43         & 0.60        \\ \hline
+Liberal cue--Rep. CF   & 0.15        & 0.13      & 0.15         & 0.17        \\ \hline
+Conserv. cue--Dem. CF  & 0.47        & 0.49      & 0.35         & 0.46        \\ \hline
+Conserv. cue--Rep. CF  & 0.29        & 0.29      & 0.15         & 0.33        \\ \hline
+No ideo. cue--Dem. CF  & 0.53        & 0.55      & 0.54         & 0.49        \\ \hline
+No ideo. cue--Rep. CF  & 0.21        & 0.19      & 0.16         & 0.26        \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{comment}
+\clearpage
+\section{How Frequently are Various Groups Mentioned in Articles that Also Mention the Party}
+\label{si_nyt_mentions}
+\input{../tabs/nyt_mentions.tex}
+\end{comment}
+
+\section{The Ubiquity of Party Stereotypes?}
+
+But even when people are encouraged to process slowly and deliberately, their party stereotypes still yield cognitive bias. In August 2018, we conducted an experiment showing just this. We presented 138 research participants from Amazon's Mechanical Turk with the image in Figure \ref{fig:avatar_shown}, requiring them to stay on that screen for 15 seconds before they could advance the survey. Figure \ref{fig:avatar_shown} presents two groups of 25 avatars, one side in blue shirts and the other in red. The avatars differ in race, gender, and general appearance but, importantly, both ``parties'' contain the exact same 25 images. (We randomized both which side was the ``Democratic'' side and the order of avatars in the figure.) After advancing the screen, participants indicated the number of ``people'' in each party they saw who were: men or women, and Black, white, or another race/ethnicity, with a counter tool provided to help with summation to 25. 
+
+\begin{figure}[p!] 
+\centering
+\caption{People are given identical images but report systematically different beliefs about what they saw}\label{fig:avatars}
+\vspace{10mm}
+\begin{subfigure}[t]{1\textwidth}
+	\caption{What respondents saw}
+	\includegraphics[width=1\textwidth]{../figs/avatar_exp.pdf} \label{fig:avatar_shown}
+\end{subfigure}
+\end{figure}
+\begin{figure}
+\ContinuedFloat
+\begin{subfigure}[t]{1\textwidth}
+	\caption{What respondents reported}
+	\includegraphics[width=1\textwidth]{../figs/avatar_results.pdf} \label{fig:avatar_guessed}
+\end{subfigure}
+\end{figure}
+
+If people's party stereotypes are not central to how they process political information, then we would expect participants to report equal numbers of women and non-white avatars on each side of the image in Figure \ref{fig:avatar_shown}. Despite our alerting participants to having to answer questions about the images and requiring them to spend time on that screen, only 26.4\% correctly identified the same number of women across images and just 25.8\% correctly reported equal numbers of non-white avatars on both sides. On average, as Figure \ref{fig:avatar_guessed} shows, participants identified 1.2 more women and 0.8 more people of color wearing blue shirts than red shirts. Although we provided identical images and encouraged more thoughtful processing, respondents still erred systematically, and consistent with party stereotypes, while reporting what they saw.\footnote{One implication that might be tested in future work is whether respondents would perform better at this admittedly tough task if they were presented two sides separated by race or gender, with shirt color varying within each side. This would allow researchers to assess how effectively people can recognize $p($party $|$ group$)$, the quantity that is more often presented in news and polling reports and which we argue contributes to the use of representativeness heuristics.}
+
+When most people process political information, they tend to do so haphazardly and automatically \citep{citrin1990self, lodge2013rationalizing, Sears1983, westen2006neural}---not in carefully controlled information environments guiding their processing, and usually handling more (and more complex) information than what we can convey with 50 avatars. Thus, we suspect that party stereotyping is not only an automatic process, but also a foremost reasoning device.% for people as they navigate the political environment.
+
+\clearpage
+
+\bibliographystyle{apsr}
+\bibliography{typecast.bib}
+
+\end{document}
+
