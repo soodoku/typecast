@@ -141,7 +141,7 @@ print(
           digits = 2,
           align = "llccc",
           caption = "Model coefficients converted to changes in predicted probabilities in the fully-factorial ``James'' experiment", 
-          label = "tab:tab:logit_james_pp"), 
+          label = "tab:logit_james_pp"), 
         include.rownames = FALSE,
         include.colnames = TRUE, 
         size="\\small", 
