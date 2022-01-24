@@ -10,10 +10,10 @@ library(MASS)
 library(margins)
 library(erer)
 library(car)
+library(xtable)
 
 # Set Working dir. to project folder
-setwd("~/Dropbox/xperceive/typecast/replication/")
-setwd(paste0(dropboxdir, "xperceive/typecast/replication/"))
+setwd(paste0(githubdir, "typecast/"))
 
 #****************************************
 #*** James study #2: Fully Factorial  ***
@@ -27,11 +27,15 @@ table(james_trust$untrustworthy, useNA = "always")
 
 #* Turn string variables indicating conditions into numeric
 james_trust$james_black  <- james_trust$cf_race == "black"
+james_trust$james_white  <- james_trust$cf_race == "white"
 james_trust$james_gay    <- james_trust$cf_spouse == "Keith"
+james_trust$james_straight  <- james_trust$cf_spouse == "Karen"
 james_trust$james_lib    <- james_trust$cf_policy == "living-wage demonstrations"
 james_trust$james_con    <- james_trust$cf_policy == "anti-tax demonstrations"
+james_trust$james_noideo <- james_trust$cf_policy == "student government"
 james_trust$james_evang  <- james_trust$cf_relig == "leads his son's Cub Scouts group, organized through the Baptist Church the family attends"
 james_trust$james_aa     <- james_trust$cf_relig == "leads his son's Junior Explorers group, organized through the Secular Families Foundation"
+james_trust$james_norel  <- james_trust$cf_relig == "coaches his son's youth sports teams"
 
 james_trust <-james_trust %>%
   mutate(dem_cf = case_when(
@@ -55,6 +59,8 @@ james_trust <-james_trust %>%
 mo  <- polr(as.factor(james_cf_ord) ~ james_black + james_gay + james_evang + james_aa + james_lib + james_con, data = james_trust, Hess = TRUE, method = "logistic")
 mo2 <- polr(as.factor(james_cf_ord) ~ james_black*james_gay*james_evang*james_aa*james_lib*james_con, data = james_trust, Hess = TRUE, method = "logistic")
 
+summary(mo2)
+
 stargazer(mo, style="ajps", 
            title = "Full model results for the fully-factorial ``James'' experiment", 
            dep.var.labels = c("\\shortstack{DV: Democratic (+1) \\\\ or Republican (-1) conjunction fallacy}"),
@@ -71,6 +77,7 @@ x <- ocME(mo)
 
 # Plotting
 ### Figure 3: JAMES, FULLY FACTORIAL
+### Table SI 3.2
 
 res <- data.frame(treat = NA, cf_mean = NA, cf_min = NA, cf_max = NA, party = NA)
 res[1:12, "treat"]    <- rep(rownames(x$out[1][[1]]), 2)
@@ -91,6 +98,7 @@ res[1:6, c("cf_min", "cf_max")]  <- cbind(res$cf_mean[1:6]  - 1.96*x$out[1][[1]]
 res[7:12, c("cf_min", "cf_max")] <- cbind(res$cf_mean[7:12] - 1.96*x$out[3][[1]][, c(2)]*100, res$cf_mean[7:12] + 1.96*x$out[3][[1]][, c(2)]*100)
 
 res <- res %>% arrange(res$treat)
+
 
 #Plot
 # Custom Theme
@@ -121,14 +129,134 @@ ggplot(res, aes(y = treat, x = cf_mean, xmin = cf_min, xmax = cf_max, colour = p
         legend.title = element_blank())
 ggsave("figs/fig_3_james_ff.pdf")
 
+# SI Table 3.2
+
+res$party <- car::recode(res$party, "'Democratic conjunction fallacy' = 'Dem-CF'; 'Republican conjunction fallacy' = 'Rep-CF'")
+res$treat <- paste(res$treat, res$party)
+table_si_32 <- res[, c(1:4)]
+
+names(table_si_32) <- c("When James is described as", "Effect", "Lower CI", "Upper CI")
+print(
+        xtable(table_si_32,
+          digits = 2,
+          align = "llccc",
+          caption = "Model coefficients converted to changes in predicted probabilities in the fully-factorial ``James'' experiment", 
+          label = "tab:tab:logit_james_pp"), 
+        include.rownames = FALSE,
+        include.colnames = TRUE, 
+        size="\\small", 
+        type = "latex", 
+        sanitize.text.function = function(x){x},
+        caption.placement = "top",
+        table.placement = "!htb",
+        file = "tabs/table_si_32_james_ff.tex")
+
 # SI Table 3.3
 
-mo  <- polr(as.factor(james_cf_ord) ~ james_black + james_gay + james_evang + james_aa + james_lib + james_con, data = james_trust, Hess = TRUE, method = "logistic")
-mo2 <- polr(as.factor(james_cf_ord) ~ james_black*james_gay*james_evang*james_aa*james_lib*james_con, data = james_trust, Hess = TRUE, method = "logistic")
-
 james_l <- james_trust %>%
-  dplyr::select(james_black, james_gay, james_evang, james_aa, james_lib, james_con, james_cf_ord) %>%
-  gather(var_name, var_value, james_black:james_con, -james_cf_ord)
+  dplyr::select(james_black, james_white, james_gay, james_straight, james_evang, james_aa, james_norel, james_lib, james_con, james_noideo, james_cf_ord) %>%
+  gather(var_name, var_value, james_black:james_noideo, -james_cf_ord)
 
-james_l %>% group_by(a = paste0(var_name, var_value)) %>% summarize(mean = mean(james_cf_ord == -1)) %>% filter(grepl("TRUE", a))
-james_l %>% group_by(a = paste0(var_name, var_value)) %>% summarize(mean = mean(james_cf_ord == 1)) %>% filter(grepl("TRUE", a))
+james_r <- james_trust %>%
+  filter(james_trust$pid3 == "republican") %>%
+  dplyr::select(james_black, james_white, james_gay, james_straight, james_evang, james_aa, james_norel, james_lib, james_con, james_noideo, james_cf_ord) %>%
+  gather(var_name, var_value, james_black:james_noideo, -james_cf_ord)
+
+james_d <- james_trust %>%
+  filter(james_trust$pid3 == "democrat") %>%
+  dplyr::select(james_black, james_white, james_gay, james_straight, james_evang, james_aa, james_norel, james_lib, james_con, james_noideo, james_cf_ord) %>%
+  gather(var_name, var_value, james_black:james_noideo, -james_cf_ord)
+
+james_i <- james_trust %>%
+  filter(james_trust$pid3 == "independent") %>%
+  dplyr::select(james_black, james_white, james_gay, james_straight, james_evang, james_aa, james_norel, james_lib, james_con, james_noideo, james_cf_ord) %>%
+  gather(var_name, var_value, james_black:james_noideo, -james_cf_ord)
+
+
+dem_rep_all <- james_l %>% 
+              group_by(group = paste0(var_name, var_value)) %>% 
+              summarize(mean = mean(james_cf_ord == -1)) %>% 
+              filter(grepl("TRUE", group))
+
+rep_rep_all <- james_l %>% 
+               group_by(group = paste0(var_name, var_value)) %>% 
+               summarize(mean = mean(james_cf_ord == 1)) %>% 
+               filter(grepl("TRUE", group))
+
+dem_rep_dem <- james_d %>% 
+              group_by(group = paste0(var_name, var_value)) %>% 
+              summarize(mean = mean(james_cf_ord == -1)) %>% 
+              filter(grepl("TRUE", group))
+
+rep_rep_dem <- james_d %>% 
+               group_by(group = paste0(var_name, var_value)) %>% 
+               summarize(mean = mean(james_cf_ord == 1)) %>% 
+               filter(grepl("TRUE", group))
+
+dem_rep_rep <- james_r %>% 
+              group_by(group = paste0(var_name, var_value)) %>% 
+              summarize(mean = mean(james_cf_ord == -1)) %>% 
+              filter(grepl("TRUE", group))
+
+rep_rep_rep <- james_r %>% 
+               group_by(group = paste0(var_name, var_value)) %>% 
+               summarize(mean = mean(james_cf_ord == 1)) %>% 
+               filter(grepl("TRUE", group))
+
+dem_rep_ind <- james_i %>% 
+              group_by(group = paste0(var_name, var_value)) %>% 
+              summarize(mean = mean(james_cf_ord == -1)) %>% 
+              filter(grepl("TRUE", group))
+
+rep_rep_ind <- james_i %>% 
+               group_by(group = paste0(var_name, var_value)) %>% 
+               summarize(mean = mean(james_cf_ord == 1)) %>% 
+               filter(grepl("TRUE", group))
+
+
+table_si_33 <- data.frame(label = 1:20, 'fs' = NA, Democrats = NA, Independents = NA, Republicans = NA)
+
+
+base  <- car::recode(dem_rep_all$group, "'james_blackTRUE' = 'Black';
+                                         'james_whiteTRUE' = 'White';
+                                         'james_evangTRUE' = 'Evangelical';
+                                         'james_aaTRUE' = 'Secular';
+                                         'james_norelTRUE' = 'No relig. cue';
+                                         'james_gayTRUE'   = 'Gay';
+                                         'james_straightTRUE' = 'Straight';
+                                         'james_conTRUE' = 'Conserv.';
+                                         'james_libTRUE' = 'Liberal';
+                                         'james_noideoTRUE' = 'No ideo cue'")
+
+table_si_33$label[seq(1, 20, 2)] <- paste0(base, "-Dem. CF")
+table_si_33$label[seq(2, 20, 2)] <- paste0(base, "-Rep. CF")
+
+table_si_33$fs[seq(1, 20, 2)] <- c(dem_rep_all$mean)
+table_si_33$fs[seq(2, 20, 2)] <- c(rep_rep_all$mean)
+
+table_si_33$Democrats[seq(1, 20, 2)] <- c(dem_rep_dem$mean)
+table_si_33$Democrats[seq(2, 20, 2)] <- c(rep_rep_dem$mean)
+
+table_si_33$Independents[seq(1, 20, 2)] <- c(dem_rep_ind$mean)
+table_si_33$Independents[seq(2, 20, 2)] <- c(rep_rep_ind$mean)
+
+table_si_33$Republicans[seq(1, 20, 2)] <- c(dem_rep_rep$mean)
+table_si_33$Republicans[seq(2, 20, 2)] <- c(rep_rep_rep$mean)
+
+table_si_33 <- table_si_33[c(3, 4, 19, 20, 9, 10, 17, 18, 7, 8, 1, 2, 15, 16, 11, 12, 5, 6, 13, 14), ]
+
+names(table_si_33)[c(1, 2)] <- c("Group-CF dyad", "Full sample")
+print(
+        xtable(table_si_33,
+          digits = 2,
+          align = "llcccc",
+          caption = "Marginal rates at which conjunction fallacies (CFs) are committed, given particular traits of ``James''", 
+          label = "tab:james_marginal"), 
+        include.rownames = FALSE,
+        include.colnames = TRUE, 
+        size="\\small", 
+        type = "latex", 
+        sanitize.text.function = function(x){x},
+        caption.placement = "top",
+        table.placement = "!htb",
+        file = "tabs/table_si_33_james_ff.tex")

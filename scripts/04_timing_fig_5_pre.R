@@ -12,8 +12,7 @@ library(lme4)
 library(margins)
 
 # Set Working dir. to project folder
-setwd("~/Dropbox/xperceive/typecast/replication/")
-setwd(paste0(dropboxdir, "xperceive/typecast/replication/"))
+setwd(paste0(githubdir, "typecast/"))
 
 #****************************************
 #*** Time pressure/requirements study ***

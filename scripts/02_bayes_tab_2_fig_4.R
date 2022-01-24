@@ -9,9 +9,7 @@ library(lme4)
 library(stargazer)
 
 # Set Working dir. to project folder
-setwd("~/Dropbox/xperceive/typecast/replication/")
-setwd(paste0(dropboxdir, "xperceive/typecast/replication/"))
-
+setwd(paste0(githubdir, "typecast/"))
 
 # Read in data
 pcomp <- read.dta13("data/timing.dta")

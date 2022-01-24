@@ -7,8 +7,7 @@ library(ggplot2)
 library(reshape2)
 
 # Set Working dir. to project folder
-setwd("~/Dropbox/xperceive/typecast/replication/")
-setwd(paste0(dropboxdir, "xperceive/typecast/replication/"))
+setwd(paste0(githubdir, "typecast/"))
 
 # Read data for James and Linda
 data <- read_csv("data/linda_clean.csv")

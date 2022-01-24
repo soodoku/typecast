@@ -74,10 +74,9 @@
 \providecommand\phantomcaption{\caption@refstepcounter\@captype}
 \makeatother
 
-\title{Typecast: A Routine Mental Shortcut \\ Causes Party Stereotyping\footnote{We thank the American Politics \& Public Policy workshop at Yale University and the Political Behavior \& Identities workshop at Duke University for participants' helpful questions, thoughts, and suggestions. We also appreciate our fellow panelists at MPSA 2017 for their feedback. Stephen Goggin, Marcel Garz, Brad Gomez, Bob Jackson, Kabir Khanna, Matt Levendusky, Matt Pietryka, Carrie Roush, and Julie Wronski also offered helpful comments. We are grateful to them.}}
+\title{Typecast: A Routine Mental Shortcut \\ Causes Party Stereotyping \\ \vspace{2in} Supporting Information\footnote{We thank the American Politics \& Public Policy workshop at Yale University and the Political Behavior \& Identities workshop at Duke University for participants' helpful questions, thoughts, and suggestions. We also appreciate our fellow panelists at MPSA 2017 for their feedback. Stephen Goggin, Marcel Garz, Brad Gomez, Bob Jackson, Kabir Khanna, Matt Levendusky, Matt Pietryka, Carrie Roush, and Julie Wronski also offered helpful comments. We are grateful to them.}}
 
 \author{Douglas J. Ahler\thanks{Doug is Assistant Professor of Political Science at the Florida State University, \href{mailto:dahler@fsu.edu}{\texttt{dahler@fsu.edu}}.} \and Gaurav Sood\thanks{Gaurav can be reached at \href{mailto:gsood07@gmail.com}{\texttt{gsood07@gmail.com}}.}}
-
 
 \begin{document}
 \maketitle
@@ -197,63 +196,8 @@ p(y_{i} = j) \sim \text{logit}^{-1}(\beta_{k}X_{ik} + \varepsilon_{i})
 
 The results of the model are presented in Table \ref{tab:logit_james}. The coefficients, converted to changes in predicted probability of making the Democratic and Republican conjunction fallacies (depicted in Figure 3, are subsequently presented in Table \ref{tab:logit_james_pp}.
 
-\begin{table}
-\caption{Full model results for the fully-factorial ``James'' experiment}
-\label{tab:logit_james}
-\begin{center}
-\begin{tabular}{l|c|}
-\cline{2-2}
-& DV: Democratic (+1) or \\
-& Republican (-1) conjunction fallacy\\
-\hline
-\multicolumn{1}{|l|}{Black (vs. white)} & -.61\\
-\multicolumn{1}{|l|}{} & (.10) \\
-\multicolumn{1}{|l|}{Gay (vs. straight)}   & -.82\\
-\multicolumn{1}{|l|}{} & (.10) \\
-\multicolumn{1}{|l|}{Evangelical (vs. nothing)}     & .26\\
-\multicolumn{1}{|l|}{} & (.12) \\
-\multicolumn{1}{|l|}{Secular (vs. nothing)}         & -.29\\
-\multicolumn{1}{|l|}{} & (.13) \\
-\multicolumn{1}{|l|}{Liberal (vs. nothing)}         & -.41\\
-\multicolumn{1}{|l|}{} & (.13) \\
-\multicolumn{1}{|l|}{Conservative (vs. nothing)}    & .36\\
-\multicolumn{1}{|l|}{} & (.12) \\
-\hline
-\multicolumn{1}{|l|}{Cutpoint$_{1}$}    & -.58\\
-\multicolumn{1}{|l|}{Cutpoint$_{2}$}    & .64\\
-\multicolumn{1}{|l|}{Pseudo $R^{2}$}    & .05\\
-\multicolumn{1}{|l|}{$n$}    & 1507\\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-
-\begin{table}
-\caption{Model coefficients converted to changes in predicted probabilities in the fully-factorial ``James'' experiment}
-\label{tab:logit_james_pp}
-\begin{center}
-\begin{tabular}{l|cc|}
-\cline{2-3}
- & \multicolumn{2}{|c|}{Respondents $(n = 1507)$ are...} \\
-\hline
-\multicolumn{1}{|l|}{When James is described as...} & \begin{tabular}[c]{@{}c@{}}more likely\\ to make\\ Dem. CF by\end{tabular} & \begin{tabular}[c]{@{}c@{}}more likely\\ to make\\ Rep. CF by\end{tabular} \\ \hline
-\multicolumn{1}{|l|}{Black (vs. white)}             & \textbf{\emph{14.0\%}}                                                            & \textbf{\emph{-9.7\%}}                                                             \\
-\multicolumn{1}{|l|}{} & [9.4, 18.5] & [-12.9, -6.5] \\ 
-\multicolumn{1}{|l|}{Gay (vs. straight)}            & \textbf{\emph{19.1\%}}                                                            & \textbf{\emph{-13.2\%}}                                                     \\
-\multicolumn{1}{|l|}{} & [14.5, 23.6] & [-16.4, -9.9] \\ 
-\multicolumn{1}{|l|}{Evangelical (vs. nothing)}     & \emph{-5.8\%}                                                            & \emph{4.2\%}                                                                       \\
-\multicolumn{1}{|l|}{} & [-11.3, -0.4] & [0.2, 8.1] \\ 
-\multicolumn{1}{|l|}{Secular (vs. nothing)}         & \emph{6.6\%}                                                             & \emph{-4.5\%}                      \\
-\multicolumn{1}{|l|}{} & [0.9., 12.2] & [-8.2, -0.7] \\ 
-\multicolumn{1}{|l|}{Liberal (vs. nothing)}         & \textbf{\emph{9.4\%}}                                                            & \textbf{\emph{-6.4\%}}                                                                                \\
-\multicolumn{1}{|l|}{} & [3.8, 15.0] & [-10.0, -2.7] \\ 
-\multicolumn{1}{|l|}{Conservative (vs. nothing)}    & \textbf{\emph{-8.3\%}}                                                            & \textbf{\emph{5.9\%}}                                                                   \\
-\multicolumn{1}{|l|}{} & [-13.8, -2.7] & [1.8, 10.0] \\ 
-\hline
-\end{tabular}
-\end{center}
-\scriptsize{NOTE: 95\% confidence intervals in brackets below estimates. Estimates in \textbf{italics} differ significantly from zero at $p<.05$. Estimates in \textbf{\emph{bolded italics}} differ significantly from zero at $p<.01$.}
-\end{table}
+\input{../tabs/table_si_31_james_ff.tex}
+\input{../tabs/table_si_32_james_ff.tex}
 
 \clearpage
 \subsection{Marginals for the James experiment: How often do respondents make the conjunction fallacy?} \label{si:marginals}
@@ -262,33 +206,7 @@ An alternative way to present these results is simply to show how often responde
 
 One interesting thing that stands out is Democrats' and Republicans' tendencies to commit the conjunction fallacy at higher rates than independents, even while the rates they commit these errors are quite similar to each other---even when assessing the other party. This is relatively consistent with the results in Ahler \& Sood (2018): everyone stereotypes, but partisans are more prone to do so than independents.
 
-\begin{table}[]
-\caption{Marginal rates at which conjunction fallacies (CFs) are committed, given particular traits of ``James''}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-Group--CF dyad         & Full sample & Democrats & Independents & Republicans \\ \hline
-Black--Dem. CF         & 0.60        & 0.66      & 0.49         & 0.54        \\ \hline
-Black--Rep. CF         & 0.15        & 0.13      & 0.10         & 0.21        \\ \hline
-White--Dem. CF         & 0.49        & 0.50      & 0.38         & 0.49        \\ \hline
-White--Rep. CF         & 0.28        & 0.28      & 0.20         & 0.29        \\ \hline
-Gay--Dem. CF           & 0.63        & 0.68      & 0.48         & 0.60        \\ \hline
-Gay--Rep. CF           & 0.14        & 0.12      & 0.08         & 0.19        \\ \hline
-Straight--Dem. CF      & 0.46        & 0.49      & 0.38         & 0.44        \\ \hline
-Straight--Rep. CF      & 0.29        & 0.29      & 0.25         & 0.31        \\ \hline
-Evangelical--Dem. CF   & 0.49        & 0.52      & 0.38         & 0.48        \\ \hline
-Evangelical--Rep. CF   & 0.27        & 0.25      & 0.25         & 0.29        \\ \hline
-Secular--Dem. CF       & 0.61        & 0.67      & 0.48         & 0.55        \\ \hline
-Secular--Rep. CF       & 0.16        & 0.16      & 0.12         & 0.18        \\ \hline
-No relig. cue--Dem. CF & 0.54        & 0.56      & 0.45         & 0.52        \\ \hline
-No relig. cue--Rep. CF & 0.21        & 0.20      & 0.08         & 0.27        \\ \hline
-Liberal cue--Dem. CF   & 0.62        & 0.69      & 0.43         & 0.60        \\ \hline
-Liberal cue--Rep. CF   & 0.15        & 0.13      & 0.15         & 0.17        \\ \hline
-Conserv. cue--Dem. CF  & 0.47        & 0.49      & 0.35         & 0.46        \\ \hline
-Conserv. cue--Rep. CF  & 0.29        & 0.29      & 0.15         & 0.33        \\ \hline
-No ideo. cue--Dem. CF  & 0.53        & 0.55      & 0.54         & 0.49        \\ \hline
-No ideo. cue--Rep. CF  & 0.21        & 0.19      & 0.16         & 0.26        \\ \hline
-\end{tabular}
-\end{table}
+\input{../tabs/table_si_33_james_ff.tex}
 
 \begin{comment}
 \clearpage
@@ -314,7 +232,7 @@ But even when people are encouraged to process slowly and deliberately, their pa
 \ContinuedFloat
 \begin{subfigure}[t]{1\textwidth}
 	\caption{What respondents reported}
-	\includegraphics[width=1\textwidth]{../figs/avatar_results.pdf} \label{fig:avatar_guessed}
+	\includegraphics[width=1\textwidth]{../figs/fig_si_41_avatars.pdf} \label{fig:avatar_guessed}
 \end{subfigure}
 \end{figure}
 

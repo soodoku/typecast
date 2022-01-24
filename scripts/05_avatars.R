@@ -14,8 +14,7 @@ library(erer)
 library(margins)
 
 # Set Working dir. to project folder
-setwd("~/Dropbox/xperceive/typecast/replication/")
-setwd(paste0(dropboxdir, "xperceive/typecast/replication/"))
+setwd(paste0(githubdir, "typecast/"))
 
 # Load data
 avatars <- read.dta13("data/turk_recoded_old.dta")
