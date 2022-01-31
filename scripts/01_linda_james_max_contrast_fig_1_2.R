@@ -65,6 +65,7 @@ with(data, summary(lm(james_dem_cf ~ james_dem + james_rep)))
 with(data, summary(lm(james_rep_cf ~ james_dem + james_rep)))
 # * Respondent does not commit conjunction fallacy
 with(data, summary(lm(james_no_cf ~ james_dem + james_rep)))
+with(data, summary(lm(james_no_cf ~ I(james_dem|james_rep))))
 
   
 #*NOTE: constant term == % commiting conjunction fallacy (or not) in control condition

@@ -192,7 +192,7 @@ p(y_{i} = 1) = p(\alpha_{0} < y_{i}^{*})
 p(y_{i} = j) \sim \text{logit}^{-1}(\beta_{k}X_{ik} + \varepsilon_{i})
 \end{equation}
 
-\noindent where $X_{k}$ denotes our treatment vector---James's race, sexual orientation, religion, and policy views. Importantly, because these these treatments were assigned randomly and independently of each other, $\beta_{k}$ captures the unique effect of attribute $k$, on average and independent of all other treatments in $K$.
+\noindent where $X_{k}$ denotes our treatment vector---James's race, sexual orientation, religion, and policy views. Importantly, $\beta_{k}$ captures the effect of attribute attribute $k$, averaged over all other attributes in $K$. 
 
 The results of the model are presented in Table \ref{tab:logit_james}. The coefficients, converted to changes in predicted probability of making the Democratic and Republican conjunction fallacies (depicted in Figure 3, are subsequently presented in Table \ref{tab:logit_james_pp}.
 
@@ -202,18 +202,17 @@ The results of the model are presented in Table \ref{tab:logit_james}. The coeff
 \clearpage
 \subsection{Marginals for the James experiment: How often do respondents make the conjunction fallacy?} \label{si:marginals}
 
-An alternative way to present these results is simply to show how often respondents commit the conjunction fallacies when presented with party-representative traits of James. This is shown in the table below, which also implies why changes in predicted probabilities are a better way to assess the effects of this information. For reasons not entirely clear, respondents were far more likely to commit the Democratic conjunction fallacy---that is, to say that James is X and a Democrat---than to commit the equivalent Republican conjunction fallacy, sometimes even for counter-representative groups. (For example, when James is given a conservative cue, respondents are still more likely to commit the Democratic conjunction fallacy. However, the rate at which people commit the Republican conjunction fallacy goes up when James is described as conservative, and is in between these two quantities when James lacks an ideological cue.) We suspect that the Democratic conjunction fallacy is more popular for several reasons but, first and foremost, that James is described as college educated at a time when a serious degree divide has opened up between the two parties. Additionally, if anything, respondents appear ever so slightly more likely to attribute their own partisanship to James, all else equal.
+An alternative way to present these results is simply to show how often respondents commit the conjunction fallacies when presented with party-representative traits of James. This is shown in the table below (see Table \ref{tab:james_marginal}), which also implies why changes in predicted probabilities are a better way to assess the effects of this information. For reasons not entirely clear, respondents were far more likely to commit the Democratic conjunction fallacy---that is, to say that James is X and a Democrat---than to commit the equivalent Republican conjunction fallacy, sometimes even for counter-representative groups. (For example, when James is given a conservative cue, respondents are still more likely to commit the Democratic conjunction fallacy. However, the rate at which people commit the Republican conjunction fallacy goes up when James is described as conservative, and is in between these two quantities when James lacks an ideological cue.) We suspect that the Democratic conjunction fallacy is more popular for several reasons but, first and foremost, that James is described as college educated at a time when a serious degree divide has opened up between the two parties. Additionally, if anything, respondents appear ever so slightly more likely to attribute their own partisanship to James, all else equal.
 
-One interesting thing that stands out is Democrats' and Republicans' tendencies to commit the conjunction fallacy at higher rates than independents, even while the rates they commit these errors are quite similar to each other---even when assessing the other party. This is relatively consistent with the results in Ahler \& Sood (2018): everyone stereotypes, but partisans are more prone to do so than independents.
+One interesting thing that stands out is that Democrats and Republicans commit the conjunction fallacy at higher rates than independents, even when the rates they commit these errors are quite similar to each other---even when assessing the other party. This is relatively consistent with the results in Ahler \& Sood (2018): everyone stereotypes, but partisans are more prone to do so than independents.
 
 \input{../tabs/table_si_33_james_ff.tex}
 
-\begin{comment}
 \clearpage
-\section{How Frequently are Various Groups Mentioned in Articles that Also Mention the Party}
-\label{si_nyt_mentions}
-\input{../tabs/nyt_mentions.tex}
-\end{comment}
+\subsection{Results From the Full Interaction Model}
+If the estimand of interest is the main treatment effect and not AMCE, which is the composite treatment effect, a weighted-average of the interactions with other treatments, then we need to estimate a full interaction model, which we do below (see Table ~\ref{tab:logit_james_interaction}). As the results show, the main effect of changing race of James to black (vs. white), his sexual orientation to gay (vs. heterosexual), changing his ideological position to liberal (vs. offering no cue), and making him secular (vs. offering no cue), all have large significants in the expected direction. However, the main effects for changing religious affiliation to Evangelical (vs. no cue) and changing ideological position to Conservative (vs. no clue) are small and statistically insignificant (unlike results in Table \ref{tab:logit_james}).
+
+\input{../tabs/table_si_34_james_ff.tex}
 
 \section{The Ubiquity of Party Stereotypes?}
 

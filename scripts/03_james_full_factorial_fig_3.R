@@ -70,6 +70,51 @@ stargazer(mo, style="ajps",
            out   = "tabs/table_si_31_james_ff.tex"
 )
 
+stargazer(mo2, style="ajps", 
+           title = "Full interaction model results for the fully-factorial ``James'' experiment", 
+           dep.var.labels = c("\\shortstack{DV: Democratic (+1) \\\\ or Republican (-1) conjunction fallacy}"),
+           digits = 2,
+           font.size = "tiny",
+           label = "tab:logit_james_interaction",
+           covariate.labels=c("Black (vs. white)", 
+                              "Gay (vs. straight)", 
+                              "Evangelical (vs. nothing)",
+                              "Secular (vs. nothing)",
+                              "Liberal (vs. nothing)",
+                              "Conservative (vs. nothing)",
+                              "Black * Gay",
+                              "Black * Evangelical", 
+                              "Gay * Evangelical",
+                              "Black* Secular", 
+                              "Gay * Secular",
+                              "Black * Liberal",
+                              "Gay *Liberal",
+                              "Evangelical * Liberal", 
+                              "Secular * Liberal", 
+                              "Black * Conservative", 
+                              "Gay * Conservative",
+                              "Evangelical * Conservative",
+                              "Secular * Conservative",
+                              "Black * Gay * Evangelical",
+                              "Black * Gay * Secular",
+                              "Black * Gay * Liberal",
+                              "Black * Evangelical * Liberal",
+                              "Gay * Evangelical * Liberal",
+                              "Black * Secular * Liberal", 
+                              "Gay * Secular * Liberal", 
+                              "Black * Gay * Conservative", 
+                              "Black * Evangelical * Conservative",
+                              "Gay * Evangelical  * Conservative",
+                              "Black * Secular * Conservative",
+                              "Gay * Secular * Conservative",
+                              "Black * Gay * Evangelical * Liberal",
+                              "Black * Gay * Secular * Liberal",
+                              "Black * Gary * Evangelical * Conservative", 
+                              "Black * Gay * Secular * Conservative"),
+           out   = "tabs/table_si_34_james_ff.tex"
+)
+
+
 margins_summary(mo)
 margins_summary(mo, at = list(james_black = TRUE, james_cf_ord = -1))
 
