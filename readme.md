@@ -23,14 +23,6 @@ of partisans in groups, the least numerate use this information to infer party c
 * [Time Pressure. Figure 5.](scripts/04_timing_fig_5_pre.R)
 * [Avatars. SI 4.](scripts/05_avatars_si_4.R)
 
-### Authors
-
-Doug Ahler and Gaurav Sood
-
-### Suggested Citation
-
-Ahler, Doug, and Gaurav Sood. 2022. Typecast: A Routine Mental Shortcut Causes Party Stereotyping. Political Behavior. 
-
 ### Figures
 
 * [Figures](figs/)
